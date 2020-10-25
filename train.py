@@ -345,7 +345,7 @@ def train():
                          'best_fitness': best_fitness,
                          'training_results': f.read(),
                          'model': ema.ema.module.state_dict() if hasattr(model, 'module') else ema.ema.state_dict(),
-                         'optimizer': None if final_epoch else optimizer.state_dict()}
+                         'optimizer': optimizer.state_dict()}
 
             # Save last checkpoint
             torch.save(chkpt, last)
